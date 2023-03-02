@@ -1,0 +1,12 @@
+OneToMany from Publisher to Book:
+
+Publisher: 
+    @OneToMany(mappedBy = "publisher")
+    private List<Book> books = new ArrayList<>();
+    
+Book:
+    @ManyToOne
+    @JoinColumn(name = "publisher_id")
+    private Publisher publisher;
+    
+Then add getter and setters
