@@ -60,13 +60,19 @@ public class Author {
         this.books = books;
     }
 
+    // Not sure how to use both firstName and lastName in the same th:text="", so I'm creating
+    // a getFullName() method instead
+    public String getFullName(){
+        return String.format("%s %s", firstName, lastName);
+    }
+
     @Override
     public String toString() {
         return "Author{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", books=" + books +
+                // ", books=" + books + // would have lead to an infinite loop
                 '}';
     }
 
